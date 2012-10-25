@@ -349,7 +349,7 @@ minetest.register_node("bridges:bridge_auto", {
 
         minetest.register_craft({
                output = "bridges:bridge_auto",
-               recipe = { { "bridges_bridge_large", "bridges:bridge_large", "bridges_bridge_large" },
-                          { "bridges_bridge_large", "bridges:bridge_large", "bridges_bridge_large" },
-                          { "bridges_bridge_large", "bridges:bridge_large", "bridges_bridge_large" },
+               recipe = { { "bridges:bridge_large", "bridges:bridge_large", "bridges:bridge_large" },
+                          { "bridges:bridge_large", "bridges:bridge_large", "bridges:bridge_large" },
+                          { "bridges:bridge_large", "bridges:bridge_large", "bridges:bridge_large" },
                          } });
