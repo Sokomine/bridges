@@ -1,4 +1,23 @@
 
+--[[
+Mod for Minetest that adds bridges (only one node wide!), slim handrails and a self-building-one-node-wide bridge.
+    
+    Copyright (C) 2013 Sokomine
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+--]]
+
 -- to make life a bit easier
 bild_pfad          = "default_wood.png"; --"forniture_wood.png";
 bild_pfad_s1       = "default_wood.png"; --"forniture_wood_s1.png";
