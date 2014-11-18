@@ -20,8 +20,10 @@ Mod for Minetest that adds bridges (only one node wide!), slim handrails and a s
 
 -- to make life a bit easier
 bild_pfad          = "default_wood.png"; --"forniture_wood.png";
-bild_pfad_s1       = "default_wood.png"; --"forniture_wood_s1.png";
-bild_pfad_s2       = "default_wood.png"; --"forniture_wood_s2.png";
+bild_pfad_s1       = bild_pfad; --"forniture_wood_s1.png";
+bild_pfad_s2       = bild_pfad; --"forniture_wood_s2.png";
+--bild_pfad_s1       = "default_wood.png"; --"forniture_wood_s1.png";
+--bild_pfad_s2       = "default_wood.png"; --"forniture_wood_s2.png";
 
 leg_front_left     = {-0.5,-0.5,-0.5, -0.4,0.5,-0.4};
 leg_front_right    = { 0.4,-0.5,-0.5,  0.5,0.5,-0.4};
@@ -40,14 +42,26 @@ groundplate_small  = {-0.4,-0.45,-0.5,  0.4,-0.4,0.5};
 groundplate_corner = {-0.5,-0.45,-0.5,  0.5,-0.4,0.5}; -- slightly larger
 
 
-local STICK = "default:stick";
+local STICK = "group:stick";
 local WOOD  = "stairs:slab_wood";
 local BASIS = "bridges:bridge_basis";
 local RAIL  = "bridges:handrail_middle";
 -- people who do not have vines have to replace "vines:vines" with something they do have and which they think might fit
 local VINES = "vines:vines"; -- useful for ropes
-local ALT   = "default:leaves"; -- alternative for vines
+local ALT   = "group:leaves"; -- alternative for vines
 
+if( minetest.get_modpath( 'moon' ) or minetest.get_modpath( 'moonrealm')) then
+	STICK = "group:stick";
+	WOOD  = "default:steel_ingot";
+	VINES = "group:stone";
+	ALT   = "group:leaves"; -- alternative for vines
+
+	bild_pfad          = "default_steel_block.png"; --"forniture_wood.png";
+	bild_pfad_s1       = bild_pfad; --"forniture_wood_s1.png";
+	bild_pfad_s2       = bild_pfad; --"forniture_wood_s2.png";
+end
+
+	
 
 local MAX_BRIDGE_LENGTH = 27; -- this is how far the automatic bridge can extend
 
@@ -331,7 +345,7 @@ minetest.register_node("bridges:bridge_auto", {
              -- is there space for a bridge?
              p = {x=pos.x+(x_dir*i), y=pos.y, z=pos.z+(z_dir*i)};
              n = minetest.env:get_node(p);
-             if( n == nil or n.name ~= "air" ) then
+             if( n == nil or (n.name ~= "air" and n.name ~= 'moonrealm:vacuum' and n.name ~= 'moonrealm:air' and n.name ~= 'moontest:vacuum' and n.name ~= 'moontest:air')) then
                 i = MAX_BRIDGE_LENGTH+1; -- end
 --                print("At length "..tostring(i)..": node at target position not air; no place for bridge: "..tostring(n.name));
              else
