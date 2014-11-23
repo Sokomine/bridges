@@ -50,7 +50,7 @@ local RAIL  = "bridges:handrail_middle";
 local VINES = "vines:vines"; -- useful for ropes
 local ALT   = "group:leaves"; -- alternative for vines
 
-if( minetest.get_modpath( 'moon' ) or minetest.get_modpath( 'moonrealm')) then
+if( minetest.get_modpath( 'moon' ) or minetest.get_modpath( 'moonrealm') or minetest.get_modpath( 'moontest') ) then
 	STICK = "group:stick";
 	WOOD  = "default:steel_ingot";
 	VINES = "group:stone";
