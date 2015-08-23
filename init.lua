@@ -59,9 +59,9 @@ if( minetest.get_modpath( 'moon' ) or minetest.get_modpath( 'moonrealm') or mine
 	bild_pfad          = "default_steel_block.png"; --"forniture_wood.png";
 	bild_pfad_s1       = bild_pfad; --"forniture_wood_s1.png";
 	bild_pfad_s2       = bild_pfad; --"forniture_wood_s2.png";
-end
 
-if( minetest.get_modpath( 'moreblocks' )) then
+-- only if no moontest is installed
+elseif( minetest.get_modpath( 'moreblocks' )) then
 	WOOD = 'moreblocks:slab_wood';
 end
 	
