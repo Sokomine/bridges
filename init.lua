@@ -61,6 +61,9 @@ if( minetest.get_modpath( 'moon' ) or minetest.get_modpath( 'moonrealm') or mine
 	bild_pfad_s2       = bild_pfad; --"forniture_wood_s2.png";
 end
 
+if( minetest.get_modpath( 'moreblocks' )) then
+	WOOD = 'moreblocks:slab_wood';
+end
 	
 
 local MAX_BRIDGE_LENGTH = 27; -- this is how far the automatic bridge can extend
